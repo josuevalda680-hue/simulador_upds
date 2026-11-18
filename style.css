@@ -1,0 +1,508 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(30, 64, 175, .35), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(37, 99, 235, .2), transparent 35%),
+        linear-gradient(135deg, #020617, #0f172a, #07152e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+::selection {
+    background: #f97316;
+    color: white;
+}
+
+/* ==========================
+   PANTALLA INICIAL
+========================== */
+
+.start_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 22px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .45);
+}
+
+/* LOGO OWLI */
+
+.logo-usfx {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    padding: 5px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #eff6ff, #ffffff);
+    border: 2px solid #dbeafe;
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, .15),
+        0 0 0 5px #f1f5f9;
+    transition: .3s ease;
+}
+
+.logo-usfx:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+.start_btn h2 {
+    color: #102b55;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/* ==========================
+   BOTONES DE ÁREAS
+========================== */
+
+.area-btn {
+    width: 100%;
+    padding: 16px;
+    margin: 10px 0;
+    border: 1px solid #1e40af;
+    border-radius: 11px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(15, 23, 42, .15);
+}
+
+.area-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(37, 99, 235, .3);
+}
+
+.area-btn.general {
+    background: linear-gradient(135deg, #c2410c, #f97316);
+    border-color: #f97316;
+}
+
+.area-btn.general:hover {
+    background: #ea580c;
+}
+
+/* ==========================
+   BIBLIOTECA
+========================== */
+
+.biblioteca-container {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.biblioteca-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: linear-gradient(135deg, #047857, #16a34a);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+.biblioteca-btn:hover {
+    background: #059669;
+    transform: translateY(-3px);
+}
+
+/* ==========================
+   CAJAS PRINCIPALES
+========================== */
+
+.info_box,
+.quiz_box,
+.result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.95);
+    opacity: 0;
+    pointer-events: none;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    transition: all .3s ease;
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* ==========================
+   INFO BOX
+========================== */
+
+.info_box {
+    width: 650px;
+    max-width: 95%;
+}
+
+.info-title {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #102b55;
+}
+
+.info-list {
+    padding: 20px 30px;
+}
+
+.info {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.info span {
+    color: #ea580c;
+    font-weight: 700;
+}
+
+.info_box .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ==========================
+   BOTONES GENERALES
+========================== */
+
+.buttons button,
+.next_btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.restart {
+    background: #1e3a8a;
+    color: #fff;
+}
+
+.restart:hover {
+    background: #2563eb;
+}
+
+.quit {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.quit:hover {
+    background: #e2e8f0;
+}
+
+/* ==========================
+   QUIZ
+========================== */
+
+.quiz_box {
+    width: 850px;
+    max-width: 95%;
+}
+
+.quiz_box header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #102b55;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #eff6ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.time_left_txt {
+    font-size: 14px;
+    color: #1e3a8a;
+}
+
+.timer_sec {
+    background: #1e3a8a;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    min-width: 50px;
+    text-align: center;
+}
+
+.time_line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background: #f97316;
+}
+
+section {
+    padding: 30px;
+}
+
+.que_text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+.option_list {
+    display: block;
+}
+
+.option {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #334155;
+}
+
+.option:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.option.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+.option.incorrect {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+.option.disabled {
+    pointer-events: none;
+}
+
+.option .icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.option .icon.tick {
+    color: #22c55e;
+}
+
+.option .icon.cross {
+    color: #ef4444;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.total_que {
+    font-weight: 600;
+    color: #334155;
+}
+
+.total_que span {
+    display: flex;
+    align-items: center;
+}
+
+.total_que span p {
+    padding: 0 5px;
+    font-weight: 700;
+}
+
+.next_btn {
+    background: #1e40af;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.next_btn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.next_btn:hover {
+    background: #2563eb;
+}
+
+/* ==========================
+   RESULTADOS
+========================== */
+
+.result_box {
+    width: 550px;
+    max-width: 95%;
+    text-align: center;
+    padding: 40px;
+}
+
+.result_box .icon {
+    font-size: 90px;
+    color: #f97316;
+}
+
+.complete_text {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #102b55;
+}
+
+.score_text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #334155;
+    line-height: 1.8;
+}
+
+.result_box .buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .start_btn {
+        padding: 25px;
+        width: 95%;
+    }
+
+    .start_btn h2 {
+        font-size: 22px;
+    }
+
+    .logo-usfx {
+        width: 105px;
+        height: 105px;
+    }
+
+    .area-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .quiz_box {
+        width: 95%;
+    }
+
+    .quiz_box header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .que_text {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .info_box,
+    .result_box {
+        width: 95%;
+    }
+
+    .info-list {
+        padding: 15px 20px;
+    }
+}
