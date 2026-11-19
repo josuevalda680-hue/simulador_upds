@@ -1,0 +1,24 @@
+OWLI - SIMULADOR DE ADMISION (VERSION CORREGIDA)
+
+INSTALACION EN XAMPP
+1. Extrae la carpeta OWLI dentro de C:\xampp\htdocs\
+2. Abre XAMPP y verifica que Apache este iniciado.
+3. Abre en Chrome: http://localhost/OWLI/
+4. Para abrir el simulador directamente: http://localhost/OWLI/index.html
+
+AREAS INCLUIDAS
+- Sociales y Humanisticas
+- Salud
+- Programacion I (banco que estaba en questions.js, sobre PHP/MySQL)
+- Economicas y Financieras
+- Tecnologicas y Agrarias
+- Simulacro General
+
+IMPORTANTE SOBRE APACHE
+No uses "DirectoryIndex disabled". Para restaurar el comportamiento normal, en httpd.conf deja:
+DirectoryIndex index.php index.pl index.cgi index.asp index.shtml index.html index.htm
+Despues guarda y reinicia Apache.
+
+El archivo index.html abre el simulador automaticamente. Si quieres ver el listado de archivos de Apache, puedes renombrar temporalmente index.html a simulador.html; para volver a abrir el simulador en /OWLI/, restaura el nombre index.html.
+
+Se conserva el logo.png original. El diseño oscuro se aplica al fondo y el logo se presenta dentro de un marco academico sin sustituir la imagen.

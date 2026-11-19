@@ -1,5 +1,5 @@
 // creating an array and passing the number, questions, options, and answers
-let questions = [
+const programacion1 = [
     {
     numb: 1,
     question: "¿Cuál de las siguientes bases de datos ha sido compatible con PHP casi desde el principio?",

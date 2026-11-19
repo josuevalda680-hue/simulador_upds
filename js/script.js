@@ -81,7 +81,7 @@ areaButtons.forEach(btn => {
 // ======================================
 // BOTÓN CANCELAR
 // ======================================
-        
+
 exit_btn.onclick = () => {
 
     info_box.classList.remove("activeInfo");
@@ -93,6 +93,7 @@ exit_btn.onclick = () => {
 // ======================================
 // CARGAR PREGUNTAS SEGÚN ÁREA
 // ======================================
+
 function cargarPreguntas() {
 
     switch (areaSeleccionada) {
@@ -105,6 +106,10 @@ function cargarPreguntas() {
             questions = [...salud];
             break;
 
+        case "programacion1":
+            questions = [...programacion1];
+            break;
+
         case "economicas":
             questions = [...economicas];
             break;
@@ -113,14 +118,11 @@ function cargarPreguntas() {
             questions = [...tecnologicas];
             break;
 
-        case "programacion2":
-            questions = [...programacion2];
-            break;
-
         case "general":
             questions = [
                 ...sociales,
                 ...salud,
+                ...programacion1,
                 ...economicas,
                 ...tecnologicas
             ];
@@ -128,6 +130,11 @@ function cargarPreguntas() {
 
         default:
             questions = [...sociales];
+    }
+
+    if (!questions.length) {
+        alert("No se encontraron preguntas para esta área. Revise el archivo JavaScript correspondiente.");
+        return false;
     }
 
     // Mezclar preguntas
@@ -141,18 +148,17 @@ function cargarPreguntas() {
     // Mezclar opciones
     mezclarOpciones();
 
-    console.log(
-        "Preguntas cargadas:",
-        questions.map(q => q.numb)
-    );
+    console.log("Preguntas cargadas para " + areaSeleccionada + ":", questions.length);
+    return true;
 }
+
 // ======================================
 // INICIAR EXAMEN
 // ======================================
 
 continue_btn.onclick = () => {
 
-    cargarPreguntas();
+    if (!cargarPreguntas()) return;
 
     info_box.classList.remove("activeInfo");
 
@@ -182,7 +188,7 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 
 restart_quiz.onclick = () => {
     // Vuelve a cargar preguntas aleatorias
-    cargarPreguntas();
+    if (!cargarPreguntas()) return;
     quiz_box.classList.add("activeQuiz");
 
     result_box.classList.remove("activeResult");
